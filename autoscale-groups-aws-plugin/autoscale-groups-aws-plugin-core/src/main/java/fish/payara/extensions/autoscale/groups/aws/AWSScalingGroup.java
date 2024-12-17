@@ -26,4 +26,12 @@ public interface AWSScalingGroup extends ScalingGroup {
     @Element("max-instances")
     int getMaxInstances();
     void setMaxInstances(int maxInstances);
+
+    @Element("payara-install-dir")
+    String getPayaraInstallDir();
+    void setPayaraInstallDir(String installDir);
+
+    @Element("password-file-path")
+    String getPasswordFilePath();
+    void setPasswordFilePath(String passwordFilePath);
 }

@@ -15,10 +15,7 @@
     <name>Payara AutoScale Groups: AWS - Core</name>
 
 
-    <properties>
-        <aws.java.sdk.version>2.28.23</aws.java.sdk.version>
-        <slf4j.version>2.0.16</slf4j.version>
-    </properties>
+
 
     <dependencies>
         <dependency>
@@ -36,43 +33,10 @@
             <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>ec2</artifactId>
-            <version>${aws.java.sdk.version}</version>
+            <groupId>fish.payara.extensions.autoscale.groups</groupId>
+            <artifactId>autoscale-groups-aws-plugin-dependencies</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.felix</groupId>
-                <artifactId>maven-bundle-plugin</artifactId>
-                <extensions>true</extensions>
-                <configuration>
-                    <instructions>
-                        <Import-Package>!software.amazon.awssdk.*,*</Import-Package>
-                    </instructions>
-                </configuration>
-            </plugin>
-            <plugin>
-                <artifactId>maven-shade-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>shade</goal>
-                        </goals>
-                        <configuration>
-                            <artifactSet>
-                                <includes>
-                                    <include>software.amazon.awssdk:*</include>
-                                </includes>
-                            </artifactSet>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>

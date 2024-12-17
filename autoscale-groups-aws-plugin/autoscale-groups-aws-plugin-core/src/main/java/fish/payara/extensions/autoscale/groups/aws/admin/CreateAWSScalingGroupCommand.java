@@ -44,6 +44,13 @@ public class CreateAWSScalingGroupCommand extends CreateScalingGroupCommand {
 
     @Param(name = "max-instances")
     private int maxInstances;
+
+    @Param(name = "payara-install-dir")
+    private String payaraInstallDir;
+
+    @Param(name = "password-file-path")
+    private String passwordFilePath;
+
     
     @Override
     public void execute(AdminCommandContext adminCommandContext) {
@@ -69,6 +76,8 @@ public class CreateAWSScalingGroupCommand extends CreateScalingGroupCommand {
                 awsScalingGroupProxy.setAmiId(amiId);
                 awsScalingGroupProxy.setMinInstances(minInstances);
                 awsScalingGroupProxy.setMaxInstances(maxInstances);
+                awsScalingGroupProxy.setPayaraInstallDir(payaraInstallDir);
+                awsScalingGroupProxy.setPasswordFilePath(passwordFilePath);
 
                 scalingGroupsProxy.getScalingGroups().add(awsScalingGroupProxy);
                 return scalingGroupsProxy;

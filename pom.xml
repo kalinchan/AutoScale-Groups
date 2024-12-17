@@ -83,6 +83,7 @@
         <module>autoscale-groups-core</module>
         <module>autoscale-groups-console</module>
         <module>autoscale-groups-aws-plugin</module>
+        <module>autoscale-groups-aws-plugin/autoscale-groups-aws-plugin-dependencies</module>
     </modules>
 
     <pluginRepositories>
